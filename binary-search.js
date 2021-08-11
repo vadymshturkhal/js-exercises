@@ -34,3 +34,5 @@ function binarySearch(numbers, n) {
 // console.log(binarySearch(nums, 4));
 // console.log(binarySearch(nums, 22));
 // console.log(binarySearch(nums, -22));
+
+module.exports = binarySearch;
