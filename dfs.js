@@ -62,31 +62,31 @@ function dfsRecur(G, vertexFrom, vertexTo, checkedVertexies) {
   return flag;
 };
 
-obj = {
-  1: [2, 4, 12],
-  2: [1, 4],
-  3: [7],
-  4: [1, 2, 6, 7, 12],
-  5: [6, 8, 9],
-  6: [4, 5, 7, 9, 13],
-  7: [3, 4, 6],
-  8: [5, 9],
-  9: [5, 6, 8],
-  10: [11, 12],
-  11: [10, 12],
-  12: [1, 4, 10, 11],
-  13: [6],
-};
-
 // Usage
 
-const G = new Graph(obj);
+// obj = {
+//   1: [2, 4, 12],
+//   2: [1, 4],
+//   3: [7],
+//   4: [1, 2, 6, 7, 12],
+//   5: [6, 8, 9],
+//   6: [4, 5, 7, 9, 13],
+//   7: [3, 4, 6],
+//   8: [5, 9],
+//   9: [5, 6, 8],
+//   10: [11, 12],
+//   11: [10, 12],
+//   12: [1, 4, 10, 11],
+//   13: [6],
+// };
 
-const val = dfs(G, 1, 11);
-console.log(val);
+// const G = new Graph(obj);
 
-const valRec = dfsRecur(G, 1, 11);
-console.log(valRec);
+// const val = dfs(G, 1, 11);
+// console.log(val);
+
+// const valRec = dfsRecur(G, 1, 11);
+// console.log(valRec);
 
 module.exports = {
   'dfs': dfs,
