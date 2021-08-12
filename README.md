@@ -1,2 +1,2 @@
 # js_exercises
-Doing exercises from Metarhia
+exercises from Metarhia
