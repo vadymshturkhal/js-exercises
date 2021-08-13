@@ -40,16 +40,18 @@ function compare(a, b) {
 
   return 0;
 }
+
 // Usage
-const nums  = [-1, 3, 5, 8, -16, -12, 2, -1, 1];
-console.log(searchPairSum(nums, 11));
-console.log(searchPairSum(nums, -8));
-console.log(searchPairSum(nums, 0));
-console.log(searchPairSum(nums, -2));
-console.log(searchPairSum(nums, -14));
-console.log(searchPairSum(nums, 6));
-console.log(searchPairSum(nums, 8));
-console.log(searchPairSum(nums, -22));
-console.log(searchPairSum(nums, -18));
-console.log(searchPairSum(nums, 100));
+
+// const nums  = [-1, 3, 5, 8, -16, -12, 2, -1, 1];
+// console.log(searchPairSum(nums, 11));
+// console.log(searchPairSum(nums, -8));
+// console.log(searchPairSum(nums, 0));
+// console.log(searchPairSum(nums, -2));
+// console.log(searchPairSum(nums, -14));
+// console.log(searchPairSum(nums, 6));
+// console.log(searchPairSum(nums, 8));
+// console.log(searchPairSum(nums, -22));
+// console.log(searchPairSum(nums, -18));
+// console.log(searchPairSum(nums, 100));
 
