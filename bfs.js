@@ -1,11 +1,14 @@
 const Queue = require('./queue');
 const Graph = require('./graph');
 
-function bfs(graph, v, to) {
+function bfs(graph, v, to, allVertexies) {
   const queue = new Queue();
   queue.put(v);
 
-  const allVertexies = graph.getAllVertexies();
+  if (!allVertexies) {
+    allVertexies = graph.getAllVertexies();
+  }
+
   allVertexies[v - 1] = false;
 
   const prevVertex = new Array(allVertexies.length + 1);
