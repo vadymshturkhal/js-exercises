@@ -53,6 +53,6 @@ function bfs(graph, v, to) {
 // const val = bfs(G, 1, 11);
 // console.log(val);
 
-// module.exports = {
-//   'bfs': bfs
-// };
+module.exports = {
+  'bfs': bfs
+};
