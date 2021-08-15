@@ -36,6 +36,22 @@ class Graph {
   hasEdge(edge) {
     return this._graph.has(edge[0]) ? this._graph.get(edge[0]).has(edge[1]) : false;
   };
+
+  deleteVertex(v) {
+    this._graph.delete(v);
+  };
+
+  reverse() {
+    const reversedGraph = new Map();
+    
+    for (let v of this.getAllVertexies()) {
+      for (let n of this._graph.get(v).keys()) {
+        reversedGraph.has(n) ? reversedGraph.get(n).set(v, 0) : reversedGraph.set(n, new Map().set(v, 0));
+      };
+    };
+
+    this._graph = reversedGraph;
+  };
 };
 
 // Usage
