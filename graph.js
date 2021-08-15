@@ -52,6 +52,32 @@ class Graph {
 
     this._graph = reversedGraph;
   };
+
+  changeAllVertexies(newVertexies) {
+    if (newVertexies.length !== this.getAllVertexies().length) {
+      return false;
+    };
+
+    const changedGraph = new Map();
+
+    for (let i = 0; i < newVertexies.length; i++) {
+      const vertexies = new Map();
+      
+      if (!this._graph.has(i + 1)) {
+        continue;
+      };
+
+      for (let value of this._graph.get(i + 1)) {
+        vertexies.set(newVertexies[value[0] - 1], 0);
+      }
+      
+      changedGraph.set(newVertexies[i], vertexies);
+    };
+
+    this._graph = changedGraph;
+
+    return true;
+  };
 };
 
 // Usage

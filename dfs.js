@@ -18,7 +18,12 @@ function dfs(G, vertexFrom, vertexTo) {
       return true;
     }
 
-    const neigbours = G.getVertexNeighbours(currentVertex)
+    const neigbours = G.getVertexNeighbours(currentVertex);
+
+    if (neigbours.length < 1) {
+      stack.pop();
+    };
+
     for (let i = 0; i < neigbours.length; i++) {
       if (toCheck[neigbours[i] - 1]) {
         stack.push(neigbours[i]);
