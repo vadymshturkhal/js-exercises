@@ -12,7 +12,7 @@ class Graph {
       const neighbours = new Map();
       for (let neighbour of obj[vertex]) {
         if (!Array.isArray(neighbour)) {
-          neighbours.set(neighbour, 0);
+          neighbours.set(neighbour, 1);
         } else {
           const [n, weight] = neighbour;
           neighbours.set(n, weight);
@@ -40,6 +40,13 @@ class Graph {
 
   hasEdge(edge) {
     return this._graph.has(edge[0]) ? this._graph.get(edge[0]).has(edge[1]) : false;
+  };
+
+  getEdgeWeight(edge) {
+    const [v, u] = edge;
+    if (this._graph.has(v) && this._graph.get(v).has(u)) {
+      return this._graph.get(v).get(u);
+    };
   };
 
   deleteVertex(v) {
