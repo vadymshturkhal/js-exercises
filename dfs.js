@@ -39,9 +39,9 @@ function dfs(G, vertexFrom, vertexTo) {
   return false;
 };
 
-function dfsRecur(G, vertexFrom, vertexTo, checkedVertexies) {
-  if (!checkedVertexies) {
-    checkedVertexies = G.getAllVertexies();
+function dfsRecur(G, vertexFrom, vertexTo, notExplored) {
+  if (!notExplored) {
+    notExplored = G.getAllVertexies();
   };
 
   if (!vertexFrom) {
@@ -49,15 +49,15 @@ function dfsRecur(G, vertexFrom, vertexTo, checkedVertexies) {
   };
 
   let flag = false;
-  checkedVertexies[vertexFrom - 1] = false;
+  notExplored[vertexFrom - 1] = false;
   for (let u of G.getVertexNeighbours(vertexFrom)) {
     if (u === vertexTo) {
       flag = true;
       break;
     }
 
-    if (checkedVertexies[u - 1]) {
-      flag = dfsRecur(G, u, vertexTo, checkedVertexies)
+    if (notExplored[u - 1]) {
+      flag = dfsRecur(G, u, vertexTo, notExplored)
       if (flag) {
         break;
       };
