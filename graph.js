@@ -11,7 +11,12 @@ class Graph {
     for (let vertex in obj) {
       const neighbours = new Map();
       for (let neighbour of obj[vertex]) {
-        neighbours.set(neighbour, 0);
+        if (!Array.isArray(neighbour)) {
+          neighbours.set(neighbour, 0);
+        } else {
+          const [n, weight] = neighbour;
+          neighbours.set(n, weight);
+        }
       };
 
       graph.set(parseInt(vertex), neighbours);
@@ -82,6 +87,7 @@ class Graph {
 
 // Usage
 
+// Add edges without weight
 // obj = {
 //   1: [2, 3, 4],
 //   2: [3, 5, 6],
@@ -91,8 +97,23 @@ class Graph {
 //   6: [2, 3],
 // };
 
+// // // Add edges with weight
+// const objWithWeight = {
+//   1: [[7, 3]],
+//   2: [[5, 1]],
+//   3: [[9, 1]],
+//   4: [[1, 2]],
+//   5: [[8, 4]],
+//   6: [[3, 4], [8, 5]],
+//   7: [[4, 3], [9, 9]],
+//   8: [[2, 1]],
+//   9: [[6, 14]],
+// };
+
 // const G = new Graph(obj);
-// console.log(G.getVertexNeighbours(1));
 // console.log(G);
+
+// const G2 = new Graph(objWithWeight);
+// console.log(G2);
 
 module.exports = Graph;
